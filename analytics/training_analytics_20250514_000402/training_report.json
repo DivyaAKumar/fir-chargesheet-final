@@ -1,0 +1,15 @@
+{
+    "training_summary": {
+        "total_episodes": 300,
+        "average_reward": 3.297,
+        "average_loss": -0.899357910528779,
+        "total_training_time": 2.559056520462036,
+        "best_reward": 4.2,
+        "worst_reward": 2.3
+    },
+    "model_configuration": {
+        "state_size": 349,
+        "hidden_size": 256,
+        "action_size": 256
+    }
+}

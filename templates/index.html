@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 mb-4">Welcome to FIR Management System</h1>
+            <p class="lead mb-4">A digital platform for filing and managing First Information Reports</p>
+            
+            {% if not current_user.is_authenticated %}
+            <div class="row justify-content-center gap-3">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Citizens</h3>
+                            <p>File and track your FIR complaints</p>
+                            <a href="{{ url_for('register') }}" class="btn btn-primary">Register as Citizen</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Police Officials</h3>
+                            <p>Manage and process FIR complaints</p>
+                            <a href="{{ url_for('login') }}" class="btn btn-primary">Login as Police</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card">
+                <div class="card-body">
+                    <h3>Welcome, {{ current_user.username }}!</h3>
+                    <p>You are logged in as a {{ current_user.role }}</p>
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Go to Dashboard</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

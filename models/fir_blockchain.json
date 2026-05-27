@@ -1,0 +1,501 @@
+[
+  {
+    "index": 0,
+    "timestamp": 1773765646.3629794,
+    "data": {
+      "type": "GENESIS",
+      "message": "FIR Blockchain Initialized"
+    },
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "nonce": 529,
+    "hash": "00dcef67ba324f7b2db2d601dd5de3bc048d0a668b0d82591e7f8e978afdcb1d"
+  },
+  {
+    "index": 1,
+    "timestamp": 1773765766.4141002,
+    "data": {
+      "type": "FIR_CREATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "complainant": "Rahul Verma",
+      "officer": "police",
+      "doc_hash": "654005a6ce55ae1d981df376c59557876f464ecb247d130537936f01eeb906ea",
+      "timestamp": "2026-03-17T16:42:46.414100"
+    },
+    "previous_hash": "00dcef67ba324f7b2db2d601dd5de3bc048d0a668b0d82591e7f8e978afdcb1d",
+    "nonce": 57,
+    "hash": "00165f8dd1b9b0fee9f23aca3dfe19af64b12e7569b667048271215d2fbd039a"
+  },
+  {
+    "index": 2,
+    "timestamp": 1773765781.227742,
+    "data": {
+      "type": "STATUS_CHANGED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "old_status": "pending",
+      "new_status": "accepted",
+      "changed_by": "police",
+      "timestamp": "2026-03-17T16:43:01.227742"
+    },
+    "previous_hash": "00165f8dd1b9b0fee9f23aca3dfe19af64b12e7569b667048271215d2fbd039a",
+    "nonce": 49,
+    "hash": "00491e907aa7d6ca8b6065f7532ef6ad1cd29d22406ce7a338128d89029b5022"
+  },
+  {
+    "index": 3,
+    "timestamp": 1773765882.9003162,
+    "data": {
+      "type": "EVIDENCE_ADDED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "evidence_hash": "df8d306d772cb448a736051b5140175fad5357c27fe90c5cbe233568028a76b0",
+      "uploaded_by": "police",
+      "timestamp": "2026-03-17T16:44:42.900316"
+    },
+    "previous_hash": "00491e907aa7d6ca8b6065f7532ef6ad1cd29d22406ce7a338128d89029b5022",
+    "nonce": 104,
+    "hash": "00e212209134e2c15e0c5b1d4a7bc85473c266ee9a935a0e772965c6901483ce"
+  },
+  {
+    "index": 4,
+    "timestamp": 1773766367.839194,
+    "data": {
+      "type": "FIR_CREATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "complainant": "Rahul Verma",
+      "officer": "police",
+      "doc_hash": "654005a6ce55ae1d981df376c59557876f464ecb247d130537936f01eeb906ea",
+      "timestamp": "2026-03-17T16:52:47.839194"
+    },
+    "previous_hash": "00e212209134e2c15e0c5b1d4a7bc85473c266ee9a935a0e772965c6901483ce",
+    "nonce": 340,
+    "hash": "00e6ad1beb017af4fda986926fc4a4f17eda1dbb0d453e7877f0450e1f798896"
+  },
+  {
+    "index": 5,
+    "timestamp": 1773766375.7659807,
+    "data": {
+      "type": "STATUS_CHANGED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "old_status": "pending",
+      "new_status": "accepted",
+      "changed_by": "police",
+      "timestamp": "2026-03-17T16:52:55.765980"
+    },
+    "previous_hash": "00e6ad1beb017af4fda986926fc4a4f17eda1dbb0d453e7877f0450e1f798896",
+    "nonce": 24,
+    "hash": "00157e056271bc85985cde679ade14447b93d1d639706176f47915ac5fce0683"
+  },
+  {
+    "index": 6,
+    "timestamp": 1773766392.3542628,
+    "data": {
+      "type": "EVIDENCE_ADDED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "evidence_hash": "df8d306d772cb448a736051b5140175fad5357c27fe90c5cbe233568028a76b0",
+      "uploaded_by": "police",
+      "timestamp": "2026-03-17T16:53:12.354262"
+    },
+    "previous_hash": "00157e056271bc85985cde679ade14447b93d1d639706176f47915ac5fce0683",
+    "nonce": 607,
+    "hash": "00a998dff4a6c78a0e4dd29a059c460c8f1d2edc1ddb9889bb99fd8a43251fff"
+  },
+  {
+    "index": 7,
+    "timestamp": 1773766433.01012,
+    "data": {
+      "type": "CHARGESHEET_GENERATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "ipc_sections": "IPC 465, IPC 384, IPC 193, IPC 419, IPC 392, IPC 506, IPC 379, IPC 302, IPC 324, IPC 364A",
+      "generated_by": "police",
+      "chargesheet_hash": "0a9362f5d4d3236611e2ca96d1307c179d83ac57fef5916064adadb9882bddee",
+      "timestamp": "2026-03-17T16:53:53.010119"
+    },
+    "previous_hash": "00a998dff4a6c78a0e4dd29a059c460c8f1d2edc1ddb9889bb99fd8a43251fff",
+    "nonce": 29,
+    "hash": "005672da3f559f25e74956a6df6840027997b98bad623d6744268b9ad3049b79"
+  },
+  {
+    "index": 8,
+    "timestamp": 1773768447.6319501,
+    "data": {
+      "type": "FIR_CREATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "complainant": " Sunita Rao",
+      "officer": "police",
+      "doc_hash": "a6ca5d3c2b2f85478239e627c5bd3419ad07a4fd67cbccb917e148f50d730b0e",
+      "timestamp": "2026-03-17T17:27:27.631950"
+    },
+    "previous_hash": "005672da3f559f25e74956a6df6840027997b98bad623d6744268b9ad3049b79",
+    "nonce": 369,
+    "hash": "006da9c6bc080880c02259d4842573f4fe3f5ac5b26a58742ef8fed6ba9ade26"
+  },
+  {
+    "index": 9,
+    "timestamp": 1773768593.3950121,
+    "data": {
+      "type": "STATUS_CHANGED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "old_status": "pending",
+      "new_status": "accepted",
+      "changed_by": "police",
+      "timestamp": "2026-03-17T17:29:53.395012"
+    },
+    "previous_hash": "006da9c6bc080880c02259d4842573f4fe3f5ac5b26a58742ef8fed6ba9ade26",
+    "nonce": 34,
+    "hash": "00f465e6c91df61c81ac7c74f8ef0ecc7d292a8d5871f1898e6b9cf9e9cb8cf7"
+  },
+  {
+    "index": 10,
+    "timestamp": 1773768649.849865,
+    "data": {
+      "type": "EVIDENCE_ADDED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "evidence_hash": "df8d306d772cb448a736051b5140175fad5357c27fe90c5cbe233568028a76b0",
+      "uploaded_by": "police",
+      "timestamp": "2026-03-17T17:30:49.849865"
+    },
+    "previous_hash": "00f465e6c91df61c81ac7c74f8ef0ecc7d292a8d5871f1898e6b9cf9e9cb8cf7",
+    "nonce": 242,
+    "hash": "0092ce024207895fb959f73097d592f11b7a10fbb73363114c96036c34c9d534"
+  },
+  {
+    "index": 11,
+    "timestamp": 1773768685.7282636,
+    "data": {
+      "type": "CHARGESHEET_GENERATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "ipc_sections": "IPC 302, IPC 324, IPC 325, IPC 326, IPC 340, IPC 392, IPC 420, IPC 498A, IPC 506",
+      "generated_by": "police",
+      "chargesheet_hash": "8e25c20989647275a5d29545771c9d8612ac1d1bd334d0fb82f7f03ab96f3b4e",
+      "timestamp": "2026-03-17T17:31:25.728263"
+    },
+    "previous_hash": "0092ce024207895fb959f73097d592f11b7a10fbb73363114c96036c34c9d534",
+    "nonce": 199,
+    "hash": "005a0dd9f80eab1363d07eec939d7d585d44d44531f739a3703627cdcbc072e9"
+  },
+  {
+    "index": 12,
+    "timestamp": 1773770183.4815543,
+    "data": {
+      "type": "FIR_CREATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "complainant": "Sunita Raox",
+      "officer": "police",
+      "doc_hash": "cc9cfeff4b2b9db3606907aacbe9ae422862cae9f4372e40a625c82f7ce46b01",
+      "timestamp": "2026-03-17T17:56:23.481554"
+    },
+    "previous_hash": "005a0dd9f80eab1363d07eec939d7d585d44d44531f739a3703627cdcbc072e9",
+    "nonce": 48,
+    "hash": "00477c659d26f21531191166f7e82e9ce8d23b1c60b174afaf6ab16954251e48"
+  },
+  {
+    "index": 13,
+    "timestamp": 1773770226.9620905,
+    "data": {
+      "type": "STATUS_CHANGED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "old_status": "pending",
+      "new_status": "accepted",
+      "changed_by": "police",
+      "timestamp": "2026-03-17T17:57:06.962090"
+    },
+    "previous_hash": "00477c659d26f21531191166f7e82e9ce8d23b1c60b174afaf6ab16954251e48",
+    "nonce": 55,
+    "hash": "00da3eea5042cec3fc699d39739b949f89897782110b2cb1ec126d1fe17d375d"
+  },
+  {
+    "index": 14,
+    "timestamp": 1773771221.8642454,
+    "data": {
+      "type": "EVIDENCE_ADDED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "evidence_hash": "df8d306d772cb448a736051b5140175fad5357c27fe90c5cbe233568028a76b0",
+      "uploaded_by": "police",
+      "timestamp": "2026-03-17T18:13:41.864245"
+    },
+    "previous_hash": "00da3eea5042cec3fc699d39739b949f89897782110b2cb1ec126d1fe17d375d",
+    "nonce": 414,
+    "hash": "00e1b44f2e615c9e19e3ab90e1d805a9a755caffa96686c3dc6b52f8bd085a96"
+  },
+  {
+    "index": 15,
+    "timestamp": 1773771259.1259718,
+    "data": {
+      "type": "CHARGESHEET_GENERATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "ipc_sections": "IPC 120B, IPC 323, IPC 324, IPC 325, IPC 34, IPC 342, IPC 379, IPC 384, IPC 420, IPC 498A, IPC 506",
+      "generated_by": "police",
+      "chargesheet_hash": "3cb7bfc714f31bc11a89ee3a3ec30b2763c661daeb184b5029e5936702041033",
+      "timestamp": "2026-03-17T18:14:19.125971"
+    },
+    "previous_hash": "00e1b44f2e615c9e19e3ab90e1d805a9a755caffa96686c3dc6b52f8bd085a96",
+    "nonce": 38,
+    "hash": "0075d42b9182f37de250adcf78637991ac754466ca66ad424f19fa3c6961692d"
+  },
+  {
+    "index": 16,
+    "timestamp": 1775459151.6109223,
+    "data": {
+      "type": "FIR_CREATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "complainant": "Lavneesh Jeswani",
+      "officer": "police",
+      "doc_hash": "ad4c1d21f3001fe3a6c305dcb7d4a78ee46dcc3df56ed9d65a6d19922a23e37e",
+      "timestamp": "2026-04-06T07:05:51.610922"
+    },
+    "previous_hash": "0075d42b9182f37de250adcf78637991ac754466ca66ad424f19fa3c6961692d",
+    "nonce": 81,
+    "hash": "000e641b3a3379dfda8ffd4137ca8b8be3efa4f29dde4c66ae2d5837d3a85832"
+  },
+  {
+    "index": 17,
+    "timestamp": 1775459157.6198862,
+    "data": {
+      "type": "STATUS_CHANGED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "old_status": "pending",
+      "new_status": "accepted",
+      "changed_by": "police",
+      "timestamp": "2026-04-06T07:05:57.619886"
+    },
+    "previous_hash": "000e641b3a3379dfda8ffd4137ca8b8be3efa4f29dde4c66ae2d5837d3a85832",
+    "nonce": 184,
+    "hash": "008a9bc1144f4e629bb9b1671dd56ae648da10e445fc6618e140519297c7b112"
+  },
+  {
+    "index": 18,
+    "timestamp": 1775459187.8188312,
+    "data": {
+      "type": "EVIDENCE_ADDED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "evidence_hash": "df8d306d772cb448a736051b5140175fad5357c27fe90c5cbe233568028a76b0",
+      "uploaded_by": "police",
+      "timestamp": "2026-04-06T07:06:27.818831"
+    },
+    "previous_hash": "008a9bc1144f4e629bb9b1671dd56ae648da10e445fc6618e140519297c7b112",
+    "nonce": 343,
+    "hash": "00330f15c567ef96a04e38df9c5948402b301d52b043fcfd543def206e6097c6"
+  },
+  {
+    "index": 19,
+    "timestamp": 1775459227.9505997,
+    "data": {
+      "type": "CHARGESHEET_GENERATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "ipc_sections": "IPC 120B, IPC 323, IPC 324, IPC 380, IPC 392, IPC 441, IPC 448, IPC 457, IPC 506",
+      "generated_by": "police",
+      "chargesheet_hash": "dd317759a533769447d27a2a191c6c96474e307a5d2bed1a0630113696fb48d6",
+      "timestamp": "2026-04-06T07:07:07.950599"
+    },
+    "previous_hash": "00330f15c567ef96a04e38df9c5948402b301d52b043fcfd543def206e6097c6",
+    "nonce": 191,
+    "hash": "00ce04cd376cef87c9b88308dace6d9d42bf88a985381f150fa8dd77dd1308c4"
+  },
+  {
+    "index": 20,
+    "timestamp": 1776064570.404777,
+    "data": {
+      "type": "FIR_CREATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "complainant": "Ravi Sharma",
+      "officer": "police",
+      "doc_hash": "03a36e6b4102b5da8a19281ec455fd9eed8f448a83e4de1b3341a607d22cdcc5",
+      "timestamp": "2026-04-13T07:16:10.403470"
+    },
+    "previous_hash": "00ce04cd376cef87c9b88308dace6d9d42bf88a985381f150fa8dd77dd1308c4",
+    "nonce": 310,
+    "hash": "0083857033a0ab09756e70ad96385e3c2994b6d1e53c1efac683acc0fad63771"
+  },
+  {
+    "index": 21,
+    "timestamp": 1776064576.33504,
+    "data": {
+      "type": "STATUS_CHANGED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "old_status": "pending",
+      "new_status": "accepted",
+      "changed_by": "police",
+      "timestamp": "2026-04-13T07:16:16.335040"
+    },
+    "previous_hash": "0083857033a0ab09756e70ad96385e3c2994b6d1e53c1efac683acc0fad63771",
+    "nonce": 59,
+    "hash": "002484b77da75f47723865df5070908eac28ab4d4dd0fe1c94931a4d83ddbfe2"
+  },
+  {
+    "index": 22,
+    "timestamp": 1776064608.1851082,
+    "data": {
+      "type": "EVIDENCE_ADDED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "evidence_hash": "df8d306d772cb448a736051b5140175fad5357c27fe90c5cbe233568028a76b0",
+      "uploaded_by": "police",
+      "timestamp": "2026-04-13T07:16:48.185108"
+    },
+    "previous_hash": "002484b77da75f47723865df5070908eac28ab4d4dd0fe1c94931a4d83ddbfe2",
+    "nonce": 72,
+    "hash": "0059e81079a53f0e540fb5f0e5f4c5f7b4c2ec6452c40f2c81f1a90c02848574"
+  },
+  {
+    "index": 23,
+    "timestamp": 1776064651.399456,
+    "data": {
+      "type": "CHARGESHEET_GENERATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "ipc_sections": "IPC 120B, IPC 323, IPC 324, IPC 380, IPC 392, IPC 441, IPC 448, IPC 457, IPC 506",
+      "generated_by": "police",
+      "chargesheet_hash": "d8caa6d82cea953df3a24f317c8217d62bd6cc9a0b523ec00ffc790da348202d",
+      "timestamp": "2026-04-13T07:17:31.399456"
+    },
+    "previous_hash": "0059e81079a53f0e540fb5f0e5f4c5f7b4c2ec6452c40f2c81f1a90c02848574",
+    "nonce": 1138,
+    "hash": "00d893b1271b397852f843fd01a987d071c975a8bc13589562d93c90a13f3e9e"
+  },
+  {
+    "index": 24,
+    "timestamp": 1778648734.5166416,
+    "data": {
+      "type": "FIR_CREATED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "complainant": "Divya",
+      "officer": "police",
+      "doc_hash": "dabb2eedce58bab720d8a8f65b52aa6af55951bbc4804a811187a24d5e77e453",
+      "timestamp": "2026-05-13T05:05:34.516641"
+    },
+    "previous_hash": "00d893b1271b397852f843fd01a987d071c975a8bc13589562d93c90a13f3e9e",
+    "nonce": 60,
+    "hash": "00b1a25f85f01407c059456e16384e2bddb13fc2ab7652a480c40d8799cfe9dc"
+  },
+  {
+    "index": 25,
+    "timestamp": 1778648743.1819465,
+    "data": {
+      "type": "STATUS_CHANGED",
+      "fir_id": 1,
+      "fir_number": "FIR/2026/0001",
+      "old_status": "pending",
+      "new_status": "accepted",
+      "changed_by": "police",
+      "timestamp": "2026-05-13T05:05:43.181946"
+    },
+    "previous_hash": "00b1a25f85f01407c059456e16384e2bddb13fc2ab7652a480c40d8799cfe9dc",
+    "nonce": 489,
+    "hash": "00cd9a8f24e0dcbf966d469e915bb628ca22dc100e9e132f40c977337eddddb3"
+  },
+  {
+    "index": 26,
+    "timestamp": 1778648883.5981107,
+    "data": {
+      "type": "FIR_CREATED",
+      "fir_id": 2,
+      "fir_number": "FIR/2026/0002",
+      "complainant": "Ravi Sharma",
+      "officer": "police",
+      "doc_hash": "ac019f4f216c118daaaaf6e1e14472c3b65968cf4e8b6a57919dfeb123b2de40",
+      "timestamp": "2026-05-13T05:08:03.598110"
+    },
+    "previous_hash": "00cd9a8f24e0dcbf966d469e915bb628ca22dc100e9e132f40c977337eddddb3",
+    "nonce": 99,
+    "hash": "0030a39f717d994bc51ee6fae8c6068aeb839e2e6eac266cc02c0058736c6a14"
+  },
+  {
+    "index": 27,
+    "timestamp": 1778648961.2328067,
+    "data": {
+      "type": "FIR_CREATED",
+      "fir_id": 3,
+      "fir_number": "FIR/2026/0003",
+      "complainant": "Lavneesh Jeswani",
+      "officer": "police",
+      "doc_hash": "075808662cc717ec0a410b70a9dee36e330ab651a433072c5bccbaf37fdf882b",
+      "timestamp": "2026-05-13T05:09:21.232806"
+    },
+    "previous_hash": "0030a39f717d994bc51ee6fae8c6068aeb839e2e6eac266cc02c0058736c6a14",
+    "nonce": 130,
+    "hash": "0034ef7e2ba7f6ef7882cf3119a3dfa92cd1b68ddf7652f18e69a25159054889"
+  },
+  {
+    "index": 28,
+    "timestamp": 1778648978.6143663,
+    "data": {
+      "type": "STATUS_CHANGED",
+      "fir_id": 3,
+      "fir_number": "FIR/2026/0003",
+      "old_status": "pending",
+      "new_status": "accepted",
+      "changed_by": "police",
+      "timestamp": "2026-05-13T05:09:38.614366"
+    },
+    "previous_hash": "0034ef7e2ba7f6ef7882cf3119a3dfa92cd1b68ddf7652f18e69a25159054889",
+    "nonce": 91,
+    "hash": "00189d91e7d8d8afb0a322607cd0ef847ebe2a91df9886bab12ea9eab8564abb"
+  },
+  {
+    "index": 29,
+    "timestamp": 1778649021.9464989,
+    "data": {
+      "type": "EVIDENCE_ADDED",
+      "fir_id": 3,
+      "fir_number": "FIR/2026/0003",
+      "evidence_hash": "df8d306d772cb448a736051b5140175fad5357c27fe90c5cbe233568028a76b0",
+      "uploaded_by": "police",
+      "timestamp": "2026-05-13T05:10:21.946498"
+    },
+    "previous_hash": "00189d91e7d8d8afb0a322607cd0ef847ebe2a91df9886bab12ea9eab8564abb",
+    "nonce": 241,
+    "hash": "00101a2eb43c56ca0ce77e593043ba04ee9af20fd6bfba66372cbafc13fcd3c7"
+  },
+  {
+    "index": 30,
+    "timestamp": 1778649054.0757108,
+    "data": {
+      "type": "EVIDENCE_ADDED",
+      "fir_id": 3,
+      "fir_number": "FIR/2026/0003",
+      "evidence_hash": "df8d306d772cb448a736051b5140175fad5357c27fe90c5cbe233568028a76b0",
+      "uploaded_by": "police",
+      "timestamp": "2026-05-13T05:10:54.075710"
+    },
+    "previous_hash": "00101a2eb43c56ca0ce77e593043ba04ee9af20fd6bfba66372cbafc13fcd3c7",
+    "nonce": 2,
+    "hash": "00062144e51ee728485362fef64f209e6aff7f2cf95a28b23b148a99c156a8cf"
+  },
+  {
+    "index": 31,
+    "timestamp": 1778649083.0062308,
+    "data": {
+      "type": "CHARGESHEET_GENERATED",
+      "fir_id": 3,
+      "fir_number": "FIR/2026/0003",
+      "ipc_sections": "IPC 120B, IPC 323, IPC 324, IPC 325, IPC 34, IPC 342, IPC 379, IPC 384, IPC 420, IPC 498A, IPC 506",
+      "generated_by": "police",
+      "chargesheet_hash": "71087eea27abc7086fa28bc371ade7304045b670517e95df56e4f6627ba79f2b",
+      "timestamp": "2026-05-13T05:11:23.006230"
+    },
+    "previous_hash": "00062144e51ee728485362fef64f209e6aff7f2cf95a28b23b148a99c156a8cf",
+    "nonce": 99,
+    "hash": "00b6a53e544b31f0f5557ab3179d46a9bf2c71ce885020e7f28cc0ffb4d6a447"
+  }
+]

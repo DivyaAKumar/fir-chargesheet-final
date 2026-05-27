@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    @media print {
+        .no-print {
+            display: none;
+        }
+        .alert {
+            display: none !important;
+        }
+        .card {
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #f8f9fa !important;
+            border-bottom: 1px solid #000;
+        }
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #f0f2f5;
+        font-weight: bold;
+    }
+
+    .card-body p {
+        margin-bottom: 10px;
+    }
+
+    h3, h4, h5 {
+        color: #2c3e50;
+    }
+
+    .btn-primary {
+        background-color: #0056b3;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #003d80;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+    .badge {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+        border-radius: 6px;
+    }
+
+    select.form-control {
+        height: 45px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>FIR Details</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>FIR Number:</strong> {{ fir.fir_number }}</p>
+                <p><strong>Complainant:</strong> {{ fir.complainant_name }}</p>
+                <p><strong>Contact:</strong> {{ fir.complainant_contact }}</p>
+                <p><strong>Address:</strong> {{ fir.complainant_address }}</p>
+                <p><strong>Incident Date:</strong> {{ fir.incident_date.strftime('%Y-%m-%d') }}</p>
+                <p><strong>Location:</strong> {{ fir.incident_location }}</p>
+                <p><strong>Description:</strong> {{ fir.description }}</p>
+                <p><strong>Status:</strong> 
+                    <span class="badge bg-{{ 'success' if fir.status == 'completed' else 'warning' if fir.status == 'pending' else 'info' if fir.status == 'accepted' else 'danger' }}">
+                        {{ fir.status }}
+                    </span>
+                </p>
+                {% if fir.is_cognizable is not none %}
+                <p><strong>Classification:</strong> 
+                    {% if fir.is_cognizable %}
+                        Cognizable Offense
+                    {% else %}
+                        Non-Cognizable Offense
+                    {% endif %}
+                </p>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if fir.status == 'pending' %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Update FIR Status</h5>
+                <form action="{{ url_for('update_fir_status', fir_id=fir.id) }}" method="POST">
+                    <div class="form-group mb-3">
+                        <label>Select Action:</label>
+                        <select name="status" class="form-control" id="status-select">
+                            <option value="">Choose action...</option>
+                            <option value="accepted">Accept FIR</option>
+                            <option value="rejected">Reject FIR</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group mb-3" id="cognizable-selection" style="display: none;">
+                        <label>Case Classification:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="is_cognizable" value="true" id="cognizable" required>
+                            <label class="form-check-label" for="cognizable">
+                                Cognizable Offense
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="is_cognizable" value="false" id="non-cognizable" required>
+                            <label class="form-check-label" for="non-cognizable">
+                                Non-Cognizable Offense
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Update Status</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if fir.status == 'accepted' %}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Add Evidence</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('add_evidence', fir_id=fir.id) }}" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Evidence Description</label>
+                        <textarea class="form-control" id="description" name="description" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="evidence_image" class="form-label">Evidence Image</label>
+                        <input type="file" class="form-control" id="evidence_image" name="evidence_image" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Evidence</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if chargesheet and chargesheet_data %}
+        <div class="mt-4">
+            <h3>Chargesheet Details</h3>
+            
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h4>FIR Details</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>FIR Number:</strong> {{ chargesheet_data.fir_details.fir_number }}</p>
+                    <p><strong>Date Filed:</strong> {{ chargesheet_data.fir_details.date_filed }}</p>
+                    <p><strong>Police Station:</strong> {{ chargesheet_data.fir_details.police_station }}</p>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h4>Complainant Details</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Name:</strong> {{ chargesheet_data.complainant_details.name }}</p>
+                    <p><strong>Contact:</strong> {{ chargesheet_data.complainant_details.contact }}</p>
+                    <p><strong>Address:</strong> {{ chargesheet_data.complainant_details.address }}</p>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h4>Evidence Details</h4>
+                </div>
+                <div class="card-body">
+                    {% for evidence in chargesheet_data.evidences %}
+                    <div class="mb-3">
+                        <p><strong>Type:</strong> {{ evidence.type }}</p>
+                        <p><strong>Description:</strong> {{ evidence.description }}</p>
+                        <p><strong>Collected By:</strong> {{ evidence.collected_by }}</p>
+                        <p><strong>Collection Date:</strong> {{ evidence.collection_date }}</p>
+                    </div>
+                    {% if not loop.last %}<hr>{% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h4>Investigation Findings</h4>
+                </div>
+                <div class="card-body">
+                    <p>{{ chargesheet_data.investigation_findings }}</p>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <button onclick="window.print()" class="btn btn-primary">Print Chargesheet</button>
+            </div>
+        </div>
+        {% elif fir.status == 'accepted' %}
+        <div class="mt-4">
+            <h3>Generate Chargesheet</h3>
+            <form action="{{ url_for('generate_chargesheet', fir_id=fir.id) }}" method="post">
+                <button type="submit" class="btn btn-primary">Generate Chargesheet</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Evidence List</h4>
+            </div>
+            <div class="card-body">
+                {% if evidence %}
+                    {% for item in evidence %}
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <p class="card-text">{{ item.description }}</p>
+                            {% if item.image_path %}
+                            <img src="{{ url_for('static', filename='evidence/' + item.image_path) }}" 
+                                 class="img-fluid mb-2" 
+                                 alt="Evidence Image">
+                            {% endif %}
+                            <small class="text-muted">
+                                Added on: {{ item.upload_date.strftime('%Y-%m-%d %H:%M') }}
+                            </small>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted">No evidence added yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('status-select').addEventListener('change', function() {
+    var cognizableSelection = document.getElementById('cognizable-selection');
+    if (this.value === 'accepted') {
+        cognizableSelection.style.display = 'block';
+    } else {
+        cognizableSelection.style.display = 'none';
+    }
+});
+</script>
+{% endblock %}

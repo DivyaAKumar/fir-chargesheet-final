@@ -1,0 +1,89 @@
+# Sample FIR Data
+# Format: complainant_name, complainant_contact, complainant_address, incident_date, incident_location, description
+
+FIR 1:
+Complainant: John Smith
+Contact: 9876543210
+Address: 123 Main Street, City Center, Mumbai
+Incident Date: 2024-03-15
+Location: Near City Mall, Mumbai
+Description: On the evening of March 15th, while walking home from work, I was approached by two men on a motorcycle. They snatched my laptop bag containing important work documents and my mobile phone. The incident occurred at approximately 7:30 PM. The suspects were wearing black jackets and helmets. I tried to chase them but they escaped through the narrow lane near City Mall.
+
+Evidence for FIR 1:
+1. CCTV footage from City Mall showing the suspects
+2. Eyewitness statement from a shopkeeper
+3. Medical report for minor injuries sustained during the incident
+4. Photograph of the location where the incident occurred
+5. Copy of the laptop's serial number and purchase receipt
+
+FIR 2:
+Complainant: Priya Sharma
+Contact: 8765432109
+Address: 456 Park Avenue, Andheri West, Mumbai
+Incident Date: 2024-03-14
+Location: Andheri Metro Station
+Description: While waiting for the metro at Andheri Station, I noticed my purse was missing. It contained my Aadhar card, PAN card, credit cards, and ₹15,000 in cash. I had placed the purse in my bag while buying a ticket. The incident occurred between 9:00 AM and 9:15 AM. I immediately informed the station staff and checked the CCTV footage.
+
+Evidence for FIR 2:
+1. CCTV footage from metro station
+2. List of stolen documents and cards
+3. Bank statement showing card transactions
+4. Statement from metro station staff
+5. Photograph of the exact location where the purse was kept
+
+FIR 3:
+Complainant: Rajesh Patel
+Contact: 7654321098
+Address: 789 Lake View Apartments, Powai, Mumbai
+Incident Date: 2024-03-13
+Location: Powai Lake Road
+Description: My car was parked outside my residence when it was broken into. The thieves stole the car's audio system, GPS device, and some personal items from the glove compartment. The incident occurred between 2:00 AM and 4:00 AM. The car's alarm was triggered but by the time I reached, the thieves had fled.
+
+Evidence for FIR 3:
+1. Car's security camera footage
+2. List of stolen items with serial numbers
+3. Photographs of the damaged car
+4. Statement from security guard
+5. Car's registration documents
+
+FIR 4:
+Complainant: Meera Desai
+Contact: 6543210987
+Address: 321 Green Valley Society, Bandra West, Mumbai
+Incident Date: 2024-03-12
+Location: Bandra Kurla Complex
+Description: While shopping at BKC, I was followed by a man who made inappropriate comments and tried to touch me. I immediately reported to the mall security. The incident occurred around 3:00 PM near the food court. The suspect was wearing a blue shirt and jeans.
+
+Evidence for FIR 4:
+1. Mall CCTV footage
+2. Statement from mall security
+3. Statement from nearby shopkeepers
+4. Medical examination report
+5. Photograph of the location
+
+FIR 5:
+Complainant: Amit Kumar
+Contact: 5432109876
+Address: 567 Ocean View Apartments, Juhu, Mumbai
+Incident Date: 2024-03-11
+Location: Juhu Beach
+Description: My mobile phone was stolen while I was at Juhu Beach. The incident occurred around 6:00 PM when I was taking photographs. Someone bumped into me and when I checked, my phone was missing. The phone contains important business contacts and documents.
+
+Evidence for FIR 5:
+1. Phone's IMEI number and purchase receipt
+2. Statement from beach security
+3. Photographs of the location
+4. List of important contacts and documents
+5. Phone's last location data
+
+# Instructions for using demo data:
+# 1. Create FIR using the complainant details
+# 2. Add evidence items one by one
+# 3. For evidence with images, use relevant stock photos or screenshots
+# 4. Update FIR status to 'accepted' and classify as cognizable
+# 5. Generate chargesheet after adding all evidence
+
+# Note: All dates are in YYYY-MM-DD format
+# Contact numbers are 10 digits
+# Addresses are fictional
+# All incidents are fictional and for demonstration purposes only 

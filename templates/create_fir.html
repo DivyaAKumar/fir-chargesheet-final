@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .card {
+        border: none;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-header {
+        background-color: #ffffff;
+        border-bottom: none;
+        text-align: center;
+        padding-top: 1.5rem;
+    }
+
+    .card-header h3 {
+        font-weight: 600;
+        color: #343a40;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #495057;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.5rem;
+        border-radius: 10px;
+        font-weight: 500;
+    }
+
+    .btn-primary:hover {
+        background-color: #0d6efd;
+    }
+
+    .btn-secondary {
+        background-color: #adb5bd;
+        border: none;
+    }
+
+    .btn-secondary:hover {
+        background-color: #868e96;
+    }
+</style>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card p-4">
+            <div class="card-header">
+                <h3>Create New FIR</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="complainant_name" class="form-label">Complainant Name</label>
+                            <input type="text" class="form-control" id="complainant_name" name="complainant_name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="complainant_contact" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="complainant_contact" name="complainant_contact" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="complainant_address" class="form-label">Address</label>
+                        <textarea class="form-control" id="complainant_address" name="complainant_address" rows="2" required></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="incident_date" class="form-label">Incident Date</label>
+                            <input type="date" class="form-control" id="incident_date" name="incident_date" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="incident_location" class="form-label">Incident Location</label>
+                            <input type="text" class="form-control" id="incident_location" name="incident_location" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Incident Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary me-2">Create FIR</button>
+                        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
