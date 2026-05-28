@@ -1,85 +1,143 @@
 # FIR Chargesheet Generator
 
-A Flask-based web application for managing FIRs (First Information Reports) and generating chargesheets using a reinforcement learning model.
+A full-stack AI-powered web application that automates the generation of legal chargesheets from First Information Reports (FIRs) for law enforcement use.
 
-## Prerequisites
 
-- Docker
-- Docker Compose
+---
+
+## Overview
+
+Officers enter a crime description and the system automatically predicts applicable Indian Penal Code (IPC) sections using a hybrid AI approach — combining BERT semantic embeddings with a Reinforcement Learning agent and a rule-based post-filter. All FIR events are cryptographically recorded on a local SHA-256 blockchain, ensuring tamper-proof audit trails.
+
+---
+
+## Tech Stack
+
+- **Backend:** Python, Flask, SQLite
+- **AI / ML:** PyTorch, HuggingFace Transformers (BERT), Reinforcement Learning (REINFORCE)
+- **Blockchain:** SHA-256, Proof-of-Work
+- **Frontend:** HTML, CSS, Bootstrap, Jinja2
+- **DevOps:** Docker, Docker Compose
+
+---
+
+## Key Features
+
+- Secure login and role-based access for police officers
+- FIR creation, management, and status tracking
+- Evidence upload and management (images and text)
+- Automated IPC section prediction from unstructured crime descriptions
+- Rule-based post-filter with 200+ domain-specific rules for legal accuracy
+- Blockchain audit trail — every FIR event recorded as a tamper-proof block
+- Visual blockchain explorer with real-time tamper detection
+- Print-ready chargesheet generation
+
+---
+
+## Model Performance
+
+Evaluated across 15 crime categories including domestic violence, murder, cyber crime, kidnapping, dacoity, rape, stalking, forgery, and bribery.
+
+| Metric | Value |
+|--------|-------|
+| Precision | 0.85 |
+| Recall | 0.76 |
+| F1-Score | 0.79 |
+
+Perfect F1 score of 1.00 achieved on domestic violence and stalking categories.
+
+---
 
 ## Project Structure
 
 ```
 .
-├── app.py                 # Main Flask application
-├── chargesheet.py         # Chargesheet generation logic
-├── chargesheet_rl.py      # Reinforcement learning model
-├── requirements.txt       # Python dependencies
-├── Dockerfile            # Docker configuration
-├── docker-compose.yml    # Docker Compose configuration
-├── static/               # Static files
-│   └── evidence/        # Evidence uploads
-├── models/              # Trained model files
-└── templates/           # HTML templates
+├── app.py                   # Main Flask application
+├── blockchain.py            # SHA-256 blockchain implementation
+├── chargesheet.py           # Chargesheet generation logic
+├── chargesheet_rl.py        # RL model and rule-based filter
+├── requirements.txt         # Python dependencies
+├── Dockerfile
+├── docker-compose.yml
+├── static/
+│   └── evidence/            # Evidence uploads
+├── models/
+│   ├── chargesheet_model.pth
+│   ├── chargesheet_env.pth
+│   └── fir_blockchain.json  # Blockchain storage
+└── templates/               # HTML templates
 ```
 
-## Building and Running
+---
 
-1. Clone the repository:
+## Prerequisites
+
+**Option A — Docker (Recommended)**
+- Docker
+- Docker Compose
+
+**Option B — Local**
+- Python 3.12+
+- pip
+
+---
+
+## Installation and Running
+
+### Using Docker
+
 ```bash
 git clone <repository-url>
 cd fir-chargesheet-generator
-```
-
-2. Build and start the containers:
-```bash
 docker-compose up --build
 ```
 
-3. Access the application:
-- Open your browser and navigate to `http://localhost:5000`
-- Login with default credentials:
-  - Username: police
-  - Password: police123
+Open `http://localhost:5000` in your browser.
 
-## Development
+### Local Development
 
-To run the application in development mode:
-
-1. Create a virtual environment:
 ```bash
+# Create and activate virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac/Linux
 
-2. Install dependencies:
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-3. Run the application:
-```bash
+# Train the model (first time only — takes 10-20 minutes)
+python chargesheet_rl.py
+
+# Run the application
 python app.py
 ```
 
-## Features
+Open `http://127.0.0.1:5000` in your browser.
 
-- User authentication for police officers
-- FIR creation and management
-- Evidence collection and management
-- Automatic chargesheet generation using RL model
-- Print functionality for chargesheets
+> **Note:** Run `python chargesheet_rl.py` before starting the app for the first time. This trains and saves the model to the `models/` folder.
+
+---
 
 ## Default Login
 
-- Username: police
-- Password: police123
-- Police Station: Central Police Station
-- Designation: Inspector
+| Field | Value |
+|-------|-------|
+| Username | police |
+| Password | police123 |
+| Police Station | Central Police Station |
+| Designation | Inspector |
+
+---
 
 ## Notes
 
-- The application uses SQLite as the database
-- Evidence files are stored in the `static/evidence` directory
-- Trained model files should be placed in the `models` directory
-- The application runs on port 5000 by default 
+- Database: SQLite stored in `instance/fir_system.db`
+- Evidence files stored in `static/evidence/`
+- Blockchain stored in `models/fir_blockchain.json` — auto-created on first run
+- Application runs on port 5000 by default
+
+---
+
+## Author
+
+Divya A Kumar
